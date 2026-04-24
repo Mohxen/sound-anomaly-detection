@@ -1,0 +1,15 @@
+# dataset
+dataset/
+
+# audio files
+*.wav
+
+# numpy / data
+*.npy
+
+# model
+*.pth
+
+# python cache
+__pycache__/
+*.pyc
