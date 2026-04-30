@@ -1,8 +1,11 @@
 # dataset
 dataset/
+!sample_dataset/
+!sample_dataset/**
 
 # audio files
 *.wav
+!sample_dataset/**/*.wav
 
 # numpy / data
 *.npy
