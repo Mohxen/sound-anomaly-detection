@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 import time
 
 import matplotlib
@@ -60,8 +61,11 @@ def main():
         benchmark["classifier"]["model_seconds"] - benchmark["autoencoder"]["model_seconds"]
     ))
 
-    plot_comparison(autoencoder_result, classifier_result, "methods_autoencoder_vs_supervised_cnn_comparison.png")
-    print("Saved comparison plot: methods_autoencoder_vs_supervised_cnn_comparison.png")
+    results_dir = Path("results")
+    results_dir.mkdir(exist_ok=True)
+    plot_path = results_dir / "methods_autoencoder_vs_supervised_cnn_comparison.png"
+    plot_comparison(autoencoder_result, classifier_result, plot_path)
+    print(f"Saved comparison plot: {plot_path}")
 
 
 def run_autoencoder_method(dataset_path):

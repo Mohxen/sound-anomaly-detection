@@ -20,6 +20,8 @@ def main():
     if not id_dirs:
         raise FileNotFoundError(f"No id_* folders found under: {fan_root}")
 
+    results_dir = Path("results")
+    results_dir.mkdir(exist_ok=True)
     rows = []
     for dataset_path in id_dirs:
         print(f"\n================ {dataset_path.name} ================")
@@ -32,9 +34,9 @@ def main():
         print("\n=== Inference benchmark ===")
         benchmark = benchmark_inference(autoencoder_result["model"], classifier_result["model"])
 
-        plot_name = f"methods_autoencoder_vs_supervised_cnn_comparison_{dataset_path.name}.png"
-        plot_comparison(autoencoder_result, classifier_result, plot_name)
-        print(f"Saved comparison plot: {plot_name}")
+        plot_path = results_dir / f"methods_autoencoder_vs_supervised_cnn_comparison_{dataset_path.name}.png"
+        plot_comparison(autoencoder_result, classifier_result, plot_path)
+        print(f"Saved comparison plot: {plot_path}")
 
         rows.extend(
             [
@@ -43,7 +45,7 @@ def main():
             ]
         )
 
-    output_path = "all_ids_method_comparison.csv"
+    output_path = results_dir / "all_ids_method_comparison.csv"
     with open(output_path, "w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=list(rows[0].keys()))
         writer.writeheader()

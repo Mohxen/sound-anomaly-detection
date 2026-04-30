@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 from src.dataset import load_normal_train_and_mixed_test
 from src.train_autoencoder import train_model
@@ -195,10 +196,13 @@ def main():
     plt.hist(anomaly_scores, bins=50, alpha=0.5, label="Anomaly")
     plt.legend()
     plt.title("Method 1 autoencoder file-level anomaly score")
-    plt.savefig("method1_autoencoder_file_level_scores.png", dpi=150, bbox_inches="tight")
+    results_dir = Path("results")
+    results_dir.mkdir(exist_ok=True)
+    output_path = results_dir / "method1_autoencoder_file_level_scores.png"
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close()
 
-    print("Saved plot: method1_autoencoder_file_level_scores.png")
+    print(f"Saved plot: {output_path}")
     print("Done!")
 
 def describe_errors(errors):

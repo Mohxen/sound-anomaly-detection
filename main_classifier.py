@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 from src.config import (
     CLASSIFIER_FILE_TOP_K,
@@ -82,10 +83,13 @@ def main():
     plt.axvline(CLASSIFIER_THRESHOLD, color="black", linestyle="--", label="Threshold")
     plt.legend()
     plt.title("Method 2 supervised CNN file probabilities")
-    plt.savefig("method2_supervised_cnn_file_probabilities.png", dpi=150, bbox_inches="tight")
+    results_dir = Path("results")
+    results_dir.mkdir(exist_ok=True)
+    output_path = results_dir / "method2_supervised_cnn_file_probabilities.png"
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close()
 
-    print("Saved plot: method2_supervised_cnn_file_probabilities.png")
+    print(f"Saved plot: {output_path}")
     print("Done!")
 
 

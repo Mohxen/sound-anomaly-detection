@@ -63,8 +63,8 @@ The tuned autoencoder improves recall, but it still produces many false positive
 The supervised CNN performs much better across all tested IDs, with high recall and low false positive rate.
 
 Generated Outputs:
-all_ids_method_comparison.csv
-methods_autoencoder_vs_supervised_cnn_comparison_id_00.png
-methods_autoencoder_vs_supervised_cnn_comparison_id_02.png
-methods_autoencoder_vs_supervised_cnn_comparison_id_04.png
-methods_autoencoder_vs_supervised_cnn_comparison_id_06.png
+results/all_ids_method_comparison.csv
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_00.png
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_02.png
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_04.png
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_06.png

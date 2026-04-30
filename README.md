@@ -39,7 +39,7 @@ python main_autoencoder.py --dataset-path sample_dataset\fan\id_00
 Output plot:
 
 ```text
-method1_autoencoder_file_level_scores.png
+results/method1_autoencoder_file_level_scores.png
 ```
 
 **Method 2: Supervised CNN**
@@ -64,7 +64,7 @@ python main_classifier.py --dataset-path sample_dataset\fan\id_00
 Output plot:
 
 ```text
-method2_supervised_cnn_file_probabilities.png
+results/method2_supervised_cnn_file_probabilities.png
 ```
 
 **Compare Methods**
@@ -118,11 +118,11 @@ python compare_methods.py
 Outputs:
 
 ```text
-all_ids_method_comparison.csv
-methods_autoencoder_vs_supervised_cnn_comparison_id_00.png
-methods_autoencoder_vs_supervised_cnn_comparison_id_02.png
-methods_autoencoder_vs_supervised_cnn_comparison_id_04.png
-methods_autoencoder_vs_supervised_cnn_comparison_id_06.png
+results/all_ids_method_comparison.csv
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_00.png
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_02.png
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_04.png
+results/methods_autoencoder_vs_supervised_cnn_comparison_id_06.png
 ```
 
 **Project Structure**
